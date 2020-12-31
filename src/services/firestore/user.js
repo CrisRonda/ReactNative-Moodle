@@ -2,10 +2,9 @@ import {db} from './config';
 const userRef = () => db.collection('user');
 
 const createUser = async (user) => {
-  const uid = userRef().doc().id;
-  await userRef()
-    .doc()
-    .set({...user, uid});
+  const _req = userRef().doc();
+  const uid = _req.id;
+  await _req.set({...user, uid});
   return uid;
 };
 const updateUser = async (uid, user) => {
@@ -16,10 +15,11 @@ const updateUser = async (uid, user) => {
 };
 
 export const setUserOnFirestore = async (user) => {
-  const _user = await userRef().where('email', '==', user.email).limit(1).get();
+  const _res = await userRef().where('email', '==', user.email).limit(1).get();
+  const _user = _res.docs.map((doc) => doc.id);
   let uid = '';
-  if (_user.size > 0) {
-    uid = await updateUser(_user.id, user);
+  if (_user.length > 0) {
+    uid = await updateUser(_user[0], user);
   } else {
     uid = await createUser(user);
   }
