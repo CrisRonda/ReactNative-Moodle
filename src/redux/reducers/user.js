@@ -12,10 +12,8 @@ const {
 const sessionReduccer = (state = initialState, action) => {
   switch (action.type) {
     case SET:
-      console.log('SET');
       return {isLogged: true, ...action.payload};
     case CLEAR:
-      console.log('CLEAR');
       return {...initialState};
 
     default:
