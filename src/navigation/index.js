@@ -4,11 +4,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import MainStack from './Main/index';
 import SinginStack from './Signin/index';
+import useAuth from '../hooks/useAuth';
 
 const Stack = createStackNavigator();
 
 const MainNavigation = () => {
-  const isLogged = false;
+  const {isLogged} = useAuth();
 
   const renderScreens = () => {
     if (isLogged) {

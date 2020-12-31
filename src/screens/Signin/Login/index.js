@@ -1,16 +1,11 @@
 import React from 'react';
 import {Container, Content} from 'native-base';
 import Form from './components/Form';
-import {loginMoodle} from '../../../services/moodle/auth';
-import {useNavigation} from '@react-navigation/native';
+import useAuth from '../../../hooks/useAuth';
+
 const Login = () => {
-  const {navigate} = useNavigation();
-  const onSubmit = async ({username, password}) => {
-    const {user} = await loginMoodle({username, password});
-    if (user) {
-      navigate('screen-home');
-    }
-  };
+  const {login} = useAuth();
+  const onSubmit = ({username, password}) => login({username, password});
 
   return (
     <Container>
