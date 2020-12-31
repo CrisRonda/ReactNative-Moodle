@@ -4,9 +4,10 @@ const initialState = {
   username: '',
   token: '',
   isLogged: false,
+  tokenNotification: '',
 };
 const {
-  SESSION: {SET, CLEAR},
+  SESSION: {SET, CLEAR, SET_NOTIFICATION_TOKEN},
 } = userActions;
 
 const sessionReduccer = (state = initialState, action) => {
@@ -15,7 +16,12 @@ const sessionReduccer = (state = initialState, action) => {
       return {isLogged: true, ...action.payload};
     case CLEAR:
       return {...initialState};
-
+    case SET_NOTIFICATION_TOKEN:
+      return {
+        ...state,
+        tokenNotification: action.payload.token,
+        uid: action.payload.uid,
+      };
     default:
       return state;
   }

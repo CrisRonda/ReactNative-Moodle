@@ -6,7 +6,6 @@ export const registerIosAppWithFCM = async () => {
     await messaging().registerDeviceForRemoteMessages();
     await messaging().setAutoInitEnabled(true);
   }
-  await handleOnRegister();
 };
 
 const getToken = () => messaging().getToken();
@@ -22,16 +21,17 @@ const checkPermission = async () => {
   );
 };
 
-const handleOnRegister = async () => {
+export const handleOnRegister = async (callback) => {
   const permission = await checkPermission();
   if (permission) {
     const token = await getToken();
-    return token;
+    return callback(token);
   }
   throw new Error('Dont have permission ');
 };
 
-const onAppNotifications = (callback) => messaging().onMessage(callback);
+const onAppNotifications = (callback = () => {}) =>
+  messaging().onMessage(callback);
 
 export const register = ({onRegister, onForeground}) => {
   handleOnRegister(onRegister);
