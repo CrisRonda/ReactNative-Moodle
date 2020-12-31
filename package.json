@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/app": "10.4.0",
+    "@react-native-firebase/firestore": "10.4.0",
+    "@react-native-firebase/messaging": "10.4.0",
     "@react-navigation/native": "5.8.10",
     "axios": "0.21.1",
     "formik": "2.2.6",
