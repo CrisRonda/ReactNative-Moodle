@@ -22,7 +22,13 @@ const MainNavigation = () => {
       );
     }
 
-    return <Stack.Screen component={SinginStack} name="stack-signin" />;
+    return (
+      <Stack.Screen
+        component={SinginStack}
+        name="stack-signin"
+        options={{title: 'Inicia sesión'}}
+      />
+    );
   };
 
   return (

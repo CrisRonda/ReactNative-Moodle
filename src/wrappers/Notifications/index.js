@@ -7,6 +7,8 @@ import {
   unRegisterFCM,
 } from '../../services/fcm';
 import {setUserOnFirestore} from '../../services/firestore/user';
+import {formatLocalNotify} from './formatData';
+import {configureLocalNotification, showNotification} from './localConfig';
 const WrapperNotifications = ({children}) => {
   const {tokenNotification: currentToken, isLogged, ...rest} = useSelector(
     ({sessionState}) => sessionState,
@@ -16,17 +18,19 @@ const WrapperNotifications = ({children}) => {
   useEffect(() => {
     const onRegister = async (token) => {
       if (currentToken !== token && isLogged) {
-        console.log('Guarndando...');
         const uid = await setUserOnFirestore({...rest, token});
-        console.log('Listo!...', uid);
         dispatch(setNotificationToken({token, uid}));
       }
+    };
+    const showLocalNotification = async (notify) => {
+      const {title, body, options} = formatLocalNotify(notify);
+      showNotification(0, title, body, notify, options);
     };
 
     const registerNotifications = async () => {
       await registerIosAppWithFCM();
-
-      register({onRegister});
+      register({onRegister, onForeground: showLocalNotification});
+      configureLocalNotification();
     };
     registerNotifications();
 
@@ -34,7 +38,8 @@ const WrapperNotifications = ({children}) => {
       unRegisterFCM();
     };
     return unregisterNotifications();
-  }, [currentToken]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentToken, dispatch, isLogged]);
 
   return children;
 };

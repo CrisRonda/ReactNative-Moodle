@@ -2,6 +2,7 @@
 
 This project is a test with moodle and web services.
 
+[Web services Moodle Docs](https://docs.moodle.org/dev/Web_service_API_functions)
 # Content
 
 - Auth Flow 

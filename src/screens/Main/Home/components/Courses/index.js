@@ -15,6 +15,9 @@ import {WebView} from 'react-native-webview';
 
 const Courses = () => {
   const {courses} = useCourses();
+  if (courses.length <= 0) {
+    return <Text>Aún no tienes cursos disponibles</Text>;
+  }
   return courses.map(
     ({id, overviewfiles, displayname, summary, enrolledusercount}) => (
       <Card key={id}>

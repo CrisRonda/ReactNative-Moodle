@@ -12,7 +12,7 @@ const SigninForm = ({onSubmit}) => {
       onSubmit={(values) => onSubmit(values)}>
       {({handleChange, handleBlur, handleSubmit, values}) => (
         <Form>
-          <Item>
+          <Item floatingLabel>
             <Label>Username</Label>
 
             <Input
@@ -22,7 +22,7 @@ const SigninForm = ({onSubmit}) => {
               onBlur={handleBlur('password')}
             />
           </Item>
-          <Item last>
+          <Item floatingLabel last>
             <Label>Password</Label>
             <Input
               onChangeText={handleChange('password')}
