@@ -5,3 +5,7 @@ export const userActions = {
     CLEAR: 'CLEAR SESSION',
   },
 };
+
+export const coursesActions = {
+  SET: 'SET_COURSES',
+};

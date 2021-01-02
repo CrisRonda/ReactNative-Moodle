@@ -1,10 +1,9 @@
 import axios from 'axios';
-
-const baseURL = 'http://192.168.100.24/';
+import {baseURL, moodleURL} from '../config';
 
 async function getCurrentUser({token, username}) {
   const resp = await axios.get(
-    `${baseURL}webservice/rest/server.php?wstoken=${token}&wsfunction=core_user_get_users_by_field&field=username&values[0]=${username}&moodlewsrestformat=json`,
+    `${moodleURL}${token}&wsfunction=core_user_get_users_by_field&field=username&values[0]=${username}&moodlewsrestformat=json`,
   );
   const user = resp.data[0];
   return user;

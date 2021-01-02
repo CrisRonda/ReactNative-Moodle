@@ -9,6 +9,7 @@ const useUser = () => {
     fullname,
     email,
     profileimageurl,
+    token,
   } = useSelector(({sessionState}) => sessionState);
   const displayName = fullname || `${firstname || ''} ${lastname || ''}`;
   return {
@@ -17,6 +18,7 @@ const useUser = () => {
     displayName,
     email,
     profileimageurl,
+    token,
   };
 };
 
