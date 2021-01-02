@@ -7,7 +7,7 @@ import reducer from './reducers';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['sessionReduccer'],
+  whitelist: ['sessionState'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

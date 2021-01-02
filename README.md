@@ -11,8 +11,10 @@ This project is a test with moodle and web services.
 - Redux 
 
 # How to run 
+- Go to Firebase console and get `google-services.json` 
+- Copy and paste `google-services.json` on `android/app`
 - Install dependencies `yarn`
 - Install pods `npx pod install`
 - Run android or ios
 
-# Screenshots
+# **Screenshots**

@@ -3,7 +3,7 @@ import {Card, CardItem, Thumbnail, Text, Left, Body} from 'native-base';
 import useUser from '../../../../../hooks/useUser';
 
 const CardUser = () => {
-  const {displayName, profileimageurl} = useUser();
+  const {displayName, profileimageurl, email} = useUser();
   return (
     <Card>
       <CardItem>
@@ -11,7 +11,7 @@ const CardUser = () => {
           <Thumbnail source={{uri: profileimageurl}} />
           <Body>
             <Text>{displayName}</Text>
-            <Text note>GeekyAnts</Text>
+            <Text note>{email}</Text>
           </Body>
         </Left>
       </CardItem>
