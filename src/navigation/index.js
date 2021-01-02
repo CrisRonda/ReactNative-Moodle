@@ -16,7 +16,16 @@ const MainNavigation = () => {
       return (
         <Stack.Screen
           component={MainStack}
-          options={{title: 'Cursos'}}
+          options={{
+            title: 'Cursos',
+            headerStyle: {
+              backgroundColor: '#f98012',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
           name={'stack-home'}
         />
       );
@@ -26,7 +35,16 @@ const MainNavigation = () => {
       <Stack.Screen
         component={SinginStack}
         name="stack-signin"
-        options={{title: 'Inicia sesión'}}
+        options={{
+          title: 'Inicia sesión',
+          headerStyle: {
+            backgroundColor: '#f98012',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
     );
   };

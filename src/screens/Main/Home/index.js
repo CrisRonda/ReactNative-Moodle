@@ -16,7 +16,10 @@ const Home = () => {
       <Content padder>
         <CardUser />
         <Courses />
-        <Button full onPress={logout}>
+        <Button
+          full
+          onPress={logout}
+          style={{backgroundColor: '#f98012', marginVertical: 32}}>
           <Text>Cerrar sesión</Text>
         </Button>
       </Content>

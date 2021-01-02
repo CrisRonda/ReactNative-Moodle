@@ -32,8 +32,7 @@ const SigninForm = ({onSubmit}) => {
           </Item>
           <Button
             full
-            primary
-            style={{marginVertical: 32}}
+            style={{marginVertical: 32, backgroundColor: '#f98012'}}
             onPress={handleSubmit}>
             <Text>Login</Text>
           </Button>

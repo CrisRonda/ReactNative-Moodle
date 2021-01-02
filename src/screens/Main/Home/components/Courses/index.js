@@ -38,7 +38,7 @@ const Courses = () => {
             source={{
               uri: overviewfiles[0].fileurl.replace('webservice/', ''),
             }}
-            style={{height: 200, width: null, flex: 1}}
+            style={{height: 200, width: null, flex: 1, resizeMode: 'center'}}
           />
         </CardItem>
         <CardItem>
