@@ -28,8 +28,6 @@ export const showNotification = (
   data = {},
   options = {},
 ) => {
-  console.log(id, title, message, data, options);
-
   PushNotification.localNotification({
     /* Android Only Properties */
     ...buildAndroidNotification(
@@ -57,7 +55,6 @@ const buildAndroidNotification = (
   data = {},
   options = {},
 ) => {
-  console.log('Meejecuto');
   return {
     id,
     autoCancel: true,

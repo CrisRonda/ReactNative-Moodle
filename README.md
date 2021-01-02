@@ -18,3 +18,20 @@ This project is a test with moodle and web services.
 - Run android or ios
 
 # **Screenshots**
+## Signin
+<div style='margin-bottom: 8px'>
+<img width='150px' align="center" src="screenshots/001.jpg"/>
+</div>
+
+## Admin 
+
+<div style='margin-bottom: 8px'>
+<img style='margin: 8px' width='150px' align="center" src="screenshots/002.jpg"/>
+<img style='margin: 8px' width='150px' align="center" src="screenshots/003.jpg"/>
+<img style='margin: 8px' width='150px' align="center" src="screenshots/004.jpg"/>
+</div>
+
+# Notifications
+<div style='margin-bottom: 8px'>
+<img width='150px' align="center" src="screenshots/005.jpg"/>
+</div>
