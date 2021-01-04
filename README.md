@@ -1,6 +1,7 @@
 # Moodle App 
 
-This project is a test with moodle and web services.
+This project is a test with moodle, web services and integration with Firebase and FCM.
+I have created an example for 2 scenarios where this app will work. [You can visit in this repo.](https://github.com/CrisRonda/Node-Moodle)
 
 [Web services Moodle Docs](https://docs.moodle.org/dev/Web_service_API_functions)
 # Content
